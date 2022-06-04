@@ -20,7 +20,7 @@ module.exports = function(app, db) {
       } else {
         res.send(result);
         console.log(result);
-        console.log(init);
+        console.log(item);
       }
     });
   });
