@@ -6,6 +6,8 @@ const app            = express();
 
 const port = 8000;
 
+let mess = 'We are live on ';
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 MongoClient.connect(db.url, (err, client) => {
@@ -13,6 +15,6 @@ MongoClient.connect(db.url, (err, client) => {
   const db = client.db('test')
   require('./app/routes')(app, db);
   app.listen(port, () => {
-    console.log('We are live on ' + port);
+    console.log(mess + port);
   });               
 });
